@@ -4,7 +4,7 @@ from django_practice_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.home, name="index"),
-    path('home/', views.home, name="index"),
-    path('', views.home, name="index"),
+    path('', views.home, name="home"),
+    path('contact/', views.contact, name="contact"),
+    path('about/', views.about, name="about"),
 ]

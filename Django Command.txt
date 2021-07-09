@@ -1,0 +1,3 @@
+django-admin startproject Django_Practice      //create django project
+python manage.py runserver      //run server
+python manage.py startapp django_practice_app      //create django app

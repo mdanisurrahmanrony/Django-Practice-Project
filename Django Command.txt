@@ -1,3 +1,6 @@
 django-admin startproject Django_Practice      //create django project
 python manage.py runserver      //run server
 python manage.py startapp django_practice_app      //create django app
+python manage.py migrate      //migration step - 1
+python manage.py makemigrations django_practice_app      //migration step - 2; here django_practice_app is app name
+python manage.py migrate      //migration step - 3

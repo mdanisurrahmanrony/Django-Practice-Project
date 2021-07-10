@@ -3,11 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def home(request):
-    return HttpResponse("<h1>This is Home Page</h1> <a href='contact/'>Contact</a> <a href='about/'>About</a>")
+def index(request):
+    return HttpResponse("<h1>I am from django_practice_app</h1>")
 
 def contact(request):
-    return HttpResponse("<h1>This is Contact Page</h1> <a href='/'>Homepage</a> <a href='/about/'>About</a>")
-
-def about(request):
-    return HttpResponse("<h1>About Us</h1> <a href='/'>Homepage</a> <a href='/contact/'>Contact</a>")
+    return HttpResponse("<h1>I am from contact page</h1>")

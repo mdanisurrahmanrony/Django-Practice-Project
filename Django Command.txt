@@ -18,3 +18,6 @@ python manage.py migrate      //migration step - 3
 python manage.py shell      //open shell under manage.py
 from django_practice_app.models import Musician      //import model named Musician
 print(Musician.objects.all())      //see Musician model objects
+python manage.py createsuperuser      //create superuser; Username: , Email Address: , Password:
+python manage.py runserver      //run server
+http://127.0.0.1:8000/admin      //go to admin panel

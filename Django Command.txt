@@ -4,3 +4,17 @@ python manage.py startapp django_practice_app      //create django app
 python manage.py migrate      //migration step - 1
 python manage.py makemigrations django_practice_app      //migration step - 2; here django_practice_app is app name
 python manage.py migrate      //migration step - 3
+python manage.py shell      //open shell under manage.py
+from django_practice_app.models import Musician      //import model named Musician
+obj = Musician(first_name="Anisur", last_name="Rony", instrument="Guiter")      /enter data to Musician model
+obj.save()/save entered data
+obj = Musician(first_name="John", last_name="Doe", instrument="Violin")      /enter another data to Musician model
+obj.save()/save another entered data
+print(Musician.objects.all())      //see Musician model objects
+exit()      //for exit
+python manage.py migrate      //migration step - 1
+python manage.py makemigrations django_practice_app      //migration step - 2; here django_practice_app is app name
+python manage.py migrate      //migration step - 3
+python manage.py shell      //open shell under manage.py
+from django_practice_app.models import Musician      //import model named Musician
+print(Musician.objects.all())      //see Musician model objects

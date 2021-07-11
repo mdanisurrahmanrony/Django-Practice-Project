@@ -5,4 +5,4 @@ class user_form(forms.Form):
 
     user_dob = forms.DateField(label="Date of Birth", widget = forms.TextInput(attrs={'type':'date'}))
 
-    user_email = forms.EmailField(label="User Email")
+    user_email = forms.EmailField(label="User Email", widget = forms.TextInput(attrs={'placeholder':'Enter your Email Address'}))

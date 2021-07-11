@@ -12,14 +12,13 @@ def index(request):
     return render(request, 'django_practice_app/index.html', context=diction)
 
 def form(request):
-    new_form = forms.user_form()
-    diction = {'test_form' : new_form, 'heading_1' : "This form is created using django library"}
+    new_form = forms.MusicianForm()
 
     if request.method == 'POST':
-        new_form = forms.user_form(request.POST)
-        diction.update({'test_form':new_form})
-        if new_form.is_valid():
-            diction.update({'field':'Fields Match!!'})
-            diction.update({'form_submitted':"Yes"})
+        new_form = forms.MusicianForm(request.POST)
 
+        if new_form.is_valid():
+            new_form.save(commit=True)
+            return index(request)
+    diction = {'test_form':new_form,'heading_1':'Add New Musician'}
     return render(request, 'django_practice_app/form.html', context=diction)

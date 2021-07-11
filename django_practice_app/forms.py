@@ -5,4 +5,4 @@ from django_practice_app import models
 class MusicianForm(forms.ModelForm):
       class Meta:
           model = models.Musician
-          exclude = ['first_name']
+          fields = ('first_name','last_name')

@@ -13,8 +13,6 @@ def index(request):
 
 def form(request):
     new_form = forms.user_form()
-    diction = {'test_form' : new_form, 'heading_1' : "This form is created using django library"}
-
     if request.method == 'POST':
         new_form = forms.user_form(request.POST)
 
@@ -22,4 +20,5 @@ def form(request):
             diction.update({'field':new_form.cleaned_data['field']})
             diction.update({'form_submitted':"Yes"})
 
+    diction = {'test_form' : new_form, 'heading_1' : "This form is created using django library"}
     return render(request, 'django_practice_app/form.html', context=diction)

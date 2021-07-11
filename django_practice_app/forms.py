@@ -1,13 +1,6 @@
 from django import forms
+from django.core import validators
 
 class user_form(forms.Form):
-    #boolean_field = forms.BooleanField(required=False)
-    #field = forms.CharField(max_length=15, min_length=5)
-    #choices = (('','---SELECT OPTION--'),('1','First'),('2','Second'),('3','Third'))
-    #field = forms.ChoiceField(choices=choices, required=False)
-    #choices = (('A','A'),('B','B'),('C','C'))
-    #field = forms.ChoiceField(choices=choices, widget=forms.RadioSelect)
-    #choices = (('','---SELECT OPTION--'),('1','First'),('2','Second'),('3','Third'))
-    #field = forms.MultipleChoiceField(choices=choices, required=False)
-    choices = (('A','A'),('B','B'),('C','C'))
-    field = forms.MultipleChoiceField(choices=choices, widget=forms.CheckboxSelectMultiple)
+    name = forms.CharField(validators=[validators.MaxLengthValidator(10),validators.MinLengthValidator(5)])
+    number_field = forms.IntegerField(validators=[validators.MaxValueValidator(15),validators.MinValueValidator(5)])

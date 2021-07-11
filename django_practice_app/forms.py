@@ -1,9 +1,15 @@
 from django import forms
 from django.core import validators
 
-def even_or_not(value):
-    if value%2 == 1:
-        raise forms.ValidationError("Please Insert an Even Number!")
 
 class user_form(forms.Form):
-    number_field = forms.IntegerField(validators=[even_or_not])
+    user_email = forms.EmailField()
+    user_vmail = forms.EmailField()
+
+    def clean(self):
+        all_cleaned_data = super().clean()
+        user_email = all_cleaned_data['user_email']
+        user_vmail = all_cleaned_data['user_vmail']
+
+        if user_email != user_vmail:
+            raise forms.ValidationError("Field Don't Match!")

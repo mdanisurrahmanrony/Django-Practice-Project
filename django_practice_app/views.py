@@ -14,12 +14,12 @@ def index(request):
 def form(request):
     new_form = forms.user_form()
     diction = {'test_form' : new_form, 'heading_1' : "This form is created using django library"}
-    
+
     if request.method == 'POST':
         new_form = forms.user_form(request.POST)
         diction.update({'test_form':new_form})
         if new_form.is_valid():
-            diction.update({'field':new_form.cleaned_data['number_field']})
+            diction.update({'field':'Fields Match!!'})
             diction.update({'form_submitted':"Yes"})
 
     return render(request, 'django_practice_app/form.html', context=diction)
